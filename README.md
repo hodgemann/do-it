@@ -22,12 +22,12 @@ So "do it" also works when you have time but no plan: the suggestion often bring
 The recommended way for Claude Code; manage updates in the `/plugin` panel:
 
 ```
-/plugin install do-it --marketplace hodgemann/do-it
+/plugin install todo-do-it --marketplace hodgemann/do-it
 ```
 
-On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add hodgemann/do-it`, then `/plugin install do-it@do-it`.
+On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add hodgemann/do-it`, then `/plugin install todo-do-it@todo-do-it`.
 
-Open a fresh session in the project and say `do it`. The plugin's skill is named `do-it:do-it`, so you can also type `/do-it:do-it` to call it directly.
+Open a fresh session in the project and say `do it`. The plugin's skill is named `todo-do-it:do-it`, so you can also type `/todo-do-it:do-it` to call it directly.
 
 ### Native skills for Codex or Claude Code
 
