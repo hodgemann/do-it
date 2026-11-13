@@ -5,12 +5,12 @@ Tasks use Markdown checkboxes. Section headings give their status; backlog subhe
 ## Do it
 
 - [ ] (do it) Short title: what to build, the files and functions involved, the constraints, and how to tell it is done. Large items list their batches:
-  - [ ] Batch 1: …
+  - [ ] Batch 1: … (one small result that can be verified and leaves the project working)
   - [ ] Batch 2: …
 
 ## Low priority
 
-Optional. Name the kind of work here (for example `Translate …` items) and in the project's `do it` settings. It ranks below every other suitable task.
+Optional. Name the kind of work here (for example `Translate …` items) and in the project's `do it` settings. It ranks below every other suitable task. Like other work, it must be queued with the user's approval before a fresh-session "do it" starts it.
 
 - [ ] Translate the new labels in the export dialog: `Export`, `Include downloads`.
 
