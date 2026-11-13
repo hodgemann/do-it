@@ -11,6 +11,6 @@
   "license": "Unlicense",
   "keywords": ["todo", "workflow", "skill"],
   "skills": [
-    "./"
+    "./skills/"
   ]
 }

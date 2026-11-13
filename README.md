@@ -17,7 +17,7 @@ So "do it" also works when you have time but no plan: the suggestion often bring
 
 ## Install
 
-### Claude Code
+### Claude Code plugin
 
 As a plugin (recommended; manage updates in the `/plugin` panel):
 
@@ -27,40 +27,63 @@ As a plugin (recommended; manage updates in the `/plugin` panel):
 
 On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add hodgemann/do-it`, then `/plugin install do-it@do-it`.
 
-Or as a plain skill, for all projects:
+### Native skills for Codex or Claude Code
+
+Clone the repository once, outside either agent's skill directory:
 
 ```sh
-git clone https://github.com/hodgemann/do-it.git ~/.claude/skills/do-it
+mkdir -p ~/.local/share
+git clone https://github.com/hodgemann/do-it.git ~/.local/share/do-it
 ```
 
-or for one project only, clone it into that project's `.claude/skills/do-it`.
+If you already have a checkout, use its location in the copy commands below. Both agents install the same `skills/do-it/` folder, which contains the instructions, templates and Codex picker metadata.
 
-### Codex
+#### Codex
 
-Install it as a native skill for all projects:
+For all projects:
 
 ```sh
-git clone https://github.com/hodgemann/do-it.git ~/.agents/skills/do-it
+mkdir -p ~/.agents/skills
+cp -R ~/.local/share/do-it/skills/do-it ~/.agents/skills/
 ```
 
 Or, from a project's root, install it for that project only:
 
 ```sh
-git clone https://github.com/hodgemann/do-it.git .agents/skills/do-it
+mkdir -p .agents/skills
+cp -R ~/.local/share/do-it/skills/do-it .agents/skills/
 ```
 
-Use one scope per project so the same skill is not installed twice. Codex loads `SKILL.md` and its bundled templates directly; only optional project settings belong in `AGENTS.md`. `agents/openai.yaml` supplies the name and description shown in Codex's skill picker. See the [official Codex skill documentation](https://learn.chatgpt.com/docs/build-skills).
+Copying just the shared skill folder gives Codex the name `do-it`. A full-repository install or a symlink back into it can pick up the Claude plugin manifest and add a plugin prefix. Codex loads the installed `SKILL.md` and its bundled templates directly; only optional project settings belong in `AGENTS.md`. See the [official Codex skill documentation](https://learn.chatgpt.com/docs/build-skills).
 
-Open a fresh Codex session in the project and say `do it`. If Codex does not select it from the plain wording, select **do it** through `/skills` or the `$` skill picker, then send the `do it` request. Codex may identify this package as `do-it:do-it` because it also contains a Claude plugin manifest.
+Open a fresh Codex session in the project and say `do it`. If Codex does not select it from the plain wording, select **do it** through `/skills` or mention `$do-it` alongside the `do it` request.
+
+#### Claude Code plain skill
+
+For all projects:
+
+```sh
+mkdir -p ~/.claude/skills
+cp -R ~/.local/share/do-it/skills/do-it ~/.claude/skills/
+```
+
+Or, from a project's root, install it for that project only:
+
+```sh
+mkdir -p .claude/skills
+cp -R ~/.local/share/do-it/skills/do-it .claude/skills/
+```
+
+For each agent, choose one installation method and scope per project. To update a native installation, pull changes in the checkout and repeat its copy command, then open a fresh session.
 
 ### Other agents
 
-For an agent without native skill support, copy the settings section from `templates/AGENTS-snippet.md` into your project's agent instruction file, followed by the body of `SKILL.md` (everything after the front matter). Copy `templates/` into the project as `do-it-templates/` and update the two template links in the pasted body to point there.
+For an agent without native skill support, copy the settings section from `skills/do-it/templates/AGENTS-snippet.md` into your project's agent instruction file, followed by the body of `skills/do-it/SKILL.md` (everything after the front matter). Copy `skills/do-it/templates/` into the project as `do-it-templates/` and update the two template links in the pasted body to point there.
 
 ## Set up a project
 
-1. Start a `TODO.md`; `templates/TODO.md` shows a layout that works well.
-2. Optionally, add a `do it settings` section to `AGENTS.md` or `CLAUDE.md` (see `templates/AGENTS-snippet.md`) to name your test commands, make every batch a release (version bump, changelog line, tag), set a low-priority kind of work, and so on. Without it, the defaults in `SKILL.md` apply.
+1. Start a `TODO.md`; `skills/do-it/templates/TODO.md` shows a layout that works well.
+2. Optionally, add a `do it settings` section to `AGENTS.md` or `CLAUDE.md` (see `skills/do-it/templates/AGENTS-snippet.md`) to name your test commands, make every batch a release (version bump, changelog line, tag), set a low-priority kind of work, and so on. Without it, the defaults in `skills/do-it/SKILL.md` apply.
 3. To queue work, say "add the export bug to do it". The agent inserts it by priority: reported problems, small behavior or usability changes, other planned work, then configured low-priority work. Equal-priority items keep their order. It tells you where the item landed. Say "as the next do it" to put it first, or name another position explicitly.
 4. Open a fresh session and say "do it". Each session completes one batch, then stops.
 
@@ -68,11 +91,11 @@ By default, version numbers and tags are left alone and completion updates go in
 
 ## Files
 
-- `SKILL.md`: the skill itself.
-- `templates/TODO.md`: a sample to-do file.
-- `templates/AGENTS-snippet.md`: project settings to paste into `AGENTS.md` or `CLAUDE.md`.
-- `.claude-plugin/`: the plugin manifest and a one-plugin marketplace, so Claude Code can install the repository with `/plugin`.
-- `agents/openai.yaml`: Codex skill picker metadata. Both agents use the same `SKILL.md` and templates.
+- `skills/do-it/SKILL.md`: the one shared skill used by both agents.
+- `skills/do-it/templates/TODO.md`: a sample to-do file.
+- `skills/do-it/templates/AGENTS-snippet.md`: project settings to paste into `AGENTS.md` or `CLAUDE.md`.
+- `skills/do-it/agents/openai.yaml`: Codex skill picker metadata.
+- `.claude-plugin/`: the plugin manifest and a one-plugin marketplace, so Claude Code can install the repository with `/plugin` and load the shared folder under `skills/`.
 
 ## License
 
