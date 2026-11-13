@@ -1,6 +1,6 @@
 ---
 name: do-it
-description: Work through a project's to-do list one queued batch at a time. Use when the user's whole message is "do it" (do the next queued item), when they ask to queue an item as the next "do it", or when they ask what the next "do it" should be.
+description: Work through a project's to-do list one queued batch at a time. Use when the user opens a fresh session with just "do it" (do the next queued item), when they ask to queue an item as the next "do it", or when they ask what the next "do it" should be.
 ---
 
 # do it
