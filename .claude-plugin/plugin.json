@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
   "name": "todo-do-it",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Work through a project's to-do list one queued batch at a time: say \"do it\" to build, test, commit and tick off the next queued item.",
   "author": {
     "name": "hodgemann"
