@@ -41,3 +41,7 @@ Copy the settings section from `templates/AGENTS-snippet.md` into your project's
 - `SKILL.md`: the skill itself.
 - `templates/TODO.md`: a sample to-do file.
 - `templates/AGENTS-snippet.md`: project settings to paste into `AGENTS.md` or `CLAUDE.md`.
+
+## License
+
+Public domain, under [the Unlicense](LICENSE): use, change and share it however you like, no attribution needed.
