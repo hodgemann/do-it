@@ -101,6 +101,14 @@ By default, version numbers and tags are left alone and completion updates go in
 - `skills/do-it/agents/openai.yaml`: Codex skill picker metadata.
 - `.claude-plugin/`: the plugin manifest, its icon and a one-plugin marketplace, so Claude Code can install the repository with `/plugin` and load the shared folder under `skills/`.
 
+## Support
+
+Report bugs and ask questions in [GitHub issues](https://github.com/hodgemann/do-it/issues).
+
+## Privacy
+
+do it is a set of written instructions, not a program. It contains no code, collects no data and contacts no service. Your agent follows the instructions inside your project: it reads and edits project files, runs the commands your settings name, and makes local commits that it never pushes. Anything your agent's provider does with your session is covered by that provider's own privacy policy.
+
 ## License
 
 Public domain, under [the Unlicense](LICENSE): use, change and share it however you like, no attribution needed.
