@@ -3,7 +3,7 @@
   "name": "do-it",
   "description": "The do it skill: work through a project's to-do list one queued batch at a time.",
   "owner": {
-    "name": "<github user>"
+    "name": "hodgemann"
   },
   "plugins": [
     {

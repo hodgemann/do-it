@@ -19,15 +19,15 @@ When nothing is queued, it reads the whole to-do list and suggests the best next
 As a plugin (recommended; `/plugin update` keeps it current):
 
 ```
-/plugin install do-it --marketplace <owner>/<repo>
+/plugin install do-it --marketplace hodgemann/do-it
 ```
 
-On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add <owner>/<repo>`, then `/plugin install do-it@do-it`.
+On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add hodgemann/do-it`, then `/plugin install do-it@do-it`.
 
 Or as a plain skill, for all projects:
 
 ```sh
-git clone <this repo> ~/.claude/skills/do-it
+git clone https://github.com/hodgemann/do-it.git ~/.claude/skills/do-it
 ```
 
 or for one project only, clone it into that project's `.claude/skills/do-it`.
