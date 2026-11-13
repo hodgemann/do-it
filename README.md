@@ -28,7 +28,7 @@ Then type `do it` in a session. Ask "queue the export bug as the next do it" to 
 
 ### Codex and other agents
 
-Copy the settings section from `templates/AGENTS-snippet.md` into your project's `AGENTS.md`, followed by the body of `SKILL.md` (everything after the front matter).
+Copy the settings section from `templates/AGENTS-snippet.md` into your project's `AGENTS.md`, followed by the body of `SKILL.md` (everything after the front matter). The body refers to `templates/`; those files are in this repository.
 
 ## Set up a project
 

@@ -26,12 +26,12 @@ The project's other rules (testing, safety, style, private files) still apply in
 
 When the user's whole message is "do it", do the **first unchecked item marked `(do it)`** in the to-do file, and nothing else.
 
-1. **Commit stray to-do edits first.** If the to-do file has changes that are not committed (items the user added by hand or with a tool), commit them on their own, separate from your work, before starting.
-2. **Build it.** Build every sub-item the queued item lists, following the parent item's notes. If the item is large and split into batches, do only the first remaining batch.
+1. **Commit stray to-do edits first.** If the to-do file has changes that are not committed (items the user added by hand or with a tool), commit them on their own, separate from your work, before starting. Leave any other uncommitted changes as they are and keep them out of your commits; if they touch files the item needs, ask the user before going on.
+2. **Build it.** If the item is split into batches, build only the first unchecked batch. Otherwise build every sub-item it lists. Follow the item's notes either way.
    - For a fix to an existing feature, start at the reported defect and its code references. The feature exists: do not spend effort checking or explaining whether it does. Inspect only what you need to find the defect, fix it and verify the fix.
    - Add focused tests for the change in the project's existing test setup. Do not add tests for unrelated layers (no browser tests for a change confined to a backend script).
    - Follow the project's rules for anything the change creates on the side (for example new page text that the project translates later: record it where the project says, do not translate it unasked).
-3. **Test it.** Run only the tests that cover the changed code, and they must pass. A failure that was already there before your change (check with `git stash`) is not yours to fix: report it and add it to the to-do file if it is not already there.
+3. **Test it.** Run only the tests that cover the changed code, and they must pass. A failure that was already there before your change is not yours to fix: report it and add it to the to-do file if it is not already there. To check, run the failing test on the last commit in a temporary worktree (`git worktree add`, removed afterwards); do not stash the user's uncommitted work.
 4. **Commit it.** Commit at logical points, one commit per coherent piece. If the project uses versioning:
    - a new feature raises the minor number (1.38.0 → 1.39.0);
    - a fix or adjustment (a small change to an existing control, script or behaviour) raises the patch number (1.38.0 → 1.38.1);
@@ -39,8 +39,12 @@ When the user's whole message is "do it", do the **first unchecked item marked `
    - add the changelog line at the top and tag the commit (`git tag v1.39.0`).
 
    Leave unrelated untracked files out of commits.
-5. **Tick it off** in its own commit. Remove the finished sub-item and note in the parent item what is done and in which version. When the last batch of an item is done, remove the item. (If the project keeps a "Done" section instead, move it there.)
-6. **Report.** Say which batch is done, in which version, and what the next "do it" will do: the next `(do it)` item, or, if none is left, your suggestion (below).
+5. **Tick it off** in its own commit. Remove the finished sub-item and note in the parent item what is done (and in which version, if the project is versioned). When the last batch of an item is done, remove the item. (If the project keeps a "Done" section instead, move it there.)
+6. **Report.** Say which batch is done (and in which version, if the project is versioned) and what the next "do it" will do: the next `(do it)` item, or, if none is left, your suggestion (below).
+
+### When you get stuck
+
+If the item is unclear, the tests cannot be made to pass, or the work turns out much larger than the item suggests: stop, commit nothing half-done, report what blocked you, and suggest how to reword or split the item.
 
 ## When nothing is queued
 
@@ -64,7 +68,7 @@ The user can always choose any item explicitly, including a low-priority one ahe
 
 When the user asks to queue something ("queue X as the next do it", "make that the next do it"):
 
-1. Write it as one unchecked item under the to-do file's queue section (create a `## Do it` section at the top if there is none), marked `(do it)`, with the date it was queued.
+1. Write it as one unchecked item at the top of the to-do file's queue section (create a `## Do it` section at the top of the file if there is none), marked `(do it)`, with the date it was queued. The new item comes first: anything already queued moves down one place and is done after it.
 2. Make the item self-contained: what to build, the relevant files, functions and endpoints you already know, constraints the user stated, and how to tell it is done. A later session, or another agent, must be able to build it from the item alone.
 3. If the item is too large for one "do it", split it into numbered batches inside the item, each one a sensible commit.
 4. Remove the item from wherever it sat before (backlog, notes) so it is not listed twice.
