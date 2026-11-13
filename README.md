@@ -99,7 +99,7 @@ By default, version numbers and tags are left alone and completion updates go in
 - `skills/do-it/templates/TODO.md`: a sample to-do file.
 - `skills/do-it/templates/AGENTS-snippet.md`: project settings to paste into `AGENTS.md` or `CLAUDE.md`.
 - `skills/do-it/agents/openai.yaml`: Codex skill picker metadata.
-- `.claude-plugin/`: the plugin manifest and a one-plugin marketplace, so Claude Code can install the repository with `/plugin` and load the shared folder under `skills/`.
+- `.claude-plugin/`: the plugin manifest, its icon and a one-plugin marketplace, so Claude Code can install the repository with `/plugin` and load the shared folder under `skills/`.
 
 ## License
 
