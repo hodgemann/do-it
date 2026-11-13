@@ -7,7 +7,7 @@ You keep a `TODO.md`. You mark the next piece of work with `(do it)`. Then you t
 1. builds exactly that item and nothing else,
 2. runs only the tests that cover the change,
 3. commits at logical points (raising the version and tagging, if the project is versioned),
-4. ticks the item off in its own commit,
+4. marks the item done in its own commit, the way your to-do file already does it (ticked, moved to a Done section, or removed),
 5. tells you what it did and what the next "do it" will be.
 
 When nothing is queued, it reads the whole to-do list and suggests the best next candidate, putting your reported bugs first, and waits for you to say yes. It never starts unqueued work on its own, never pushes, and keeps each step small enough to review.

@@ -5,7 +5,7 @@ description: Work through a project's to-do list one queued batch at a time. Use
 
 # do it
 
-A small routine for steady, reviewable progress on a project. The to-do list holds the work. The user marks the next piece with `(do it)`. Saying "do it" builds that piece, tests it, commits it, ticks it off and reports what comes next. Nothing else gets touched.
+A small routine for steady, reviewable progress on a project. The to-do list holds the work. The user marks the next piece with `(do it)`. Saying "do it" builds that piece, tests it, commits it, marks it done and reports what comes next. Nothing else gets touched.
 
 ## Project settings
 
@@ -18,6 +18,7 @@ Before anything else, read the project's agent instruction file (`AGENTS.md`, `C
 | Tests | Whatever the project's instructions and test setup name; run only the ones that cover the change |
 | Versioning | If the project has a `VERSION` file or version field and a `CHANGELOG.md`: semantic versioning, one changelog line per version, a `vX.Y.Z` tag. Otherwise no versioning |
 | Low-priority work | None. A project can name a kind of item (for example `Translate …` items) that ranks below everything else |
+| Finished items | Whatever the to-do file already does: tick them (`- [x]`) or move them to a "Done" section. If it shows no habit yet, remove them; git history keeps the record |
 | Pushing | Never. Commits stay local until the user pushes |
 
 The project's other rules (testing, safety, style, private files) still apply in full while doing a batch.
@@ -39,7 +40,7 @@ When the user's whole message is "do it", do the **first unchecked item marked `
    - add the changelog line at the top and tag the commit (`git tag v1.39.0`).
 
    Leave unrelated untracked files out of commits.
-5. **Tick it off** in its own commit. Remove the finished sub-item and note in the parent item what is done (and in which version, if the project is versioned). When the last batch of an item is done, remove the item. (If the project keeps a "Done" section instead, move it there.)
+5. **Mark it done** in its own commit, the way the project handles finished items (see the settings). Mark the finished batch or sub-item, and note in the parent item what is done (and in which version, if the project is versioned). When the last batch of an item is done, mark the whole item done.
 6. **Report.** Say which batch is done (and in which version, if the project is versioned) and what the next "do it" will do: the next `(do it)` item, or, if none is left, your suggestion (below).
 
 ### When you get stuck

@@ -9,6 +9,7 @@ Paste this section into your project's `AGENTS.md` (read by Codex and other agen
 - Tests: `pytest tests/` for server code; `npm test` for page logic; `npm run e2e` when the page or its markup changed.
 - Versioning: `VERSION` and `CHANGELOG.md`; tag `vX.Y.Z`. Feature → minor, fix or adjustment → patch; docs, to-do and test-only commits keep the version.
 - Low-priority work: `Translate …` items under "Translations". When it is the only work left, "do it" translates the first one: <the project's steps>.
+- Finished items: tick them (`- [x]`) and leave them in place.
 - Never push.
 ```
 
