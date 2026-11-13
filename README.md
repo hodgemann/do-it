@@ -12,6 +12,8 @@ You keep a `TODO.md`. You mark the next piece of work with `(do it)`. Then you t
 
 When nothing is queued, it reads the whole to-do list and suggests the best next candidate, putting your reported bugs first, and waits for you to say yes. It never starts unqueued work on its own, never pushes, and keeps each step small enough to review.
 
+So "do it" also works when you have time but no plan: the suggestion often brings back something you asked for weeks ago and forgot, and one small finished item tends to spark the next idea.
+
 ## Install
 
 ### Claude Code

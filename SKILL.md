@@ -69,9 +69,9 @@ The user can always choose any item explicitly, including a low-priority one ahe
 
 ## Queueing
 
-When the user asks to queue something ("queue X as the next do it", "make that the next do it"):
+When the user asks to queue something ("queue X as the next do it", "make that the next do it", "queue X after the export fix"):
 
-1. Write it as one unchecked item at the top of the to-do file's queue section (create a `## Do it` section at the top of the file if there is none), marked `(do it)`. The new item comes first: anything already queued moves down one place and is done after it.
+1. Write it as one unchecked item in the to-do file's queue section (create a `## Do it` section at the top of the file if there is none), marked `(do it)`. The user controls the queue, so put the item where their words say: "next" or "first" puts it at the top, ahead of everything already queued; "after Y", "before Y", "last" or "at the end" put it there. With no ordering word, it goes at the top and is done next. The user can reorder the queue at any time, by hand or by asking.
 2. Make the item self-contained: what to build, the relevant files, functions and endpoints you already know, constraints the user stated, and how to tell it is done. A later session, or another agent, must be able to build it from the item alone.
 3. If the item is too large for one "do it", split it into numbered batches inside the item, each one a sensible commit.
 4. Remove the item from wherever it sat before (backlog, notes) so it is not listed twice.
