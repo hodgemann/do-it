@@ -9,8 +9,5 @@
   "homepage": "https://github.com/hodgemann/do-it",
   "repository": "https://github.com/hodgemann/do-it",
   "license": "Unlicense",
-  "keywords": ["todo", "workflow", "skill"],
-  "skills": [
-    "./skills/"
-  ]
+  "keywords": ["todo", "workflow", "skill"]
 }

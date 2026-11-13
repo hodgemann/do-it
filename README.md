@@ -19,13 +19,15 @@ So "do it" also works when you have time but no plan: the suggestion often bring
 
 ### Claude Code plugin
 
-As a plugin (recommended; manage updates in the `/plugin` panel):
+The recommended way for Claude Code; manage updates in the `/plugin` panel:
 
 ```
 /plugin install do-it --marketplace hodgemann/do-it
 ```
 
 On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add hodgemann/do-it`, then `/plugin install do-it@do-it`.
+
+Open a fresh session in the project and say `do it`. The plugin's skill is named `do-it:do-it`, so you can also type `/do-it:do-it` to call it directly.
 
 ### Native skills for Codex or Claude Code
 
@@ -73,6 +75,8 @@ Or, from a project's root, install it for that project only:
 mkdir -p .claude/skills
 cp -R ~/.local/share/do-it/skills/do-it .claude/skills/
 ```
+
+Open a fresh Claude Code session in the project and say `do it`, or type `/do-it` to call the skill directly.
 
 For each agent, choose one installation method and scope per project. To update a native installation, pull changes in the checkout and repeat its copy command, then open a fresh session.
 
