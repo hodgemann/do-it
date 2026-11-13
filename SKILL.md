@@ -7,6 +7,8 @@ description: Work through a project's to-do list one queued batch at a time. Use
 
 A small routine for steady, reviewable progress on a project. The to-do list holds the work. The user marks the next piece with `(do it)`. Saying "do it" builds that piece, tests it, commits it, marks it done and reports what comes next. Nothing else gets touched.
 
+Each "do it" is a quick thing. A complex item becomes a series of quick things once it is split into batches, one batch per "do it".
+
 ## Project settings
 
 Before anything else, read the project's agent instruction file (`AGENTS.md`, `CLAUDE.md` or similar) for a `do it` settings section (see `templates/AGENTS-snippet.md`). Settings there override the defaults below:
@@ -78,7 +80,7 @@ When the user asks to queue something ("add X to do it", "queue X as the next do
 
    The user can reorder the queue at any time, by hand or by asking.
 2. Make the item self-contained: what to build, the relevant files, functions and endpoints you already know, constraints the user stated, and how to tell it is done. A later session, or another agent, must be able to build it from the item alone.
-3. If the item is too large for one "do it", split it into numbered batches inside the item, each one a sensible commit.
+3. If the item is too large for one quick "do it", split it into numbered batches inside the item, each one quick on its own and a sensible commit.
 4. Remove the item from wherever it sat before (backlog, notes) so it is not listed twice.
 5. Commit the to-do change on its own ("Queue … for do it").
 6. Tell the user where it landed: its place in the queue (for example "third of five") and the items just before and after it, so they can move it if they disagree.
