@@ -7,10 +7,10 @@ Paste this section into your project's `AGENTS.md` (read by Codex and other agen
 
 - To-do file: `TODO.md`
 - Tests: `pytest tests/` for server code; `npm test` for page logic; `npm run e2e` when the page or its markup changed.
-- Versioning: `VERSION` and `CHANGELOG.md`; tag `vX.Y.Z`. Feature → minor, fix or adjustment → patch; docs, to-do and test-only commits keep the version.
-- Low-priority work: `Translate …` items under "Translations". When it is the only work left, "do it" translates the first one: <the project's steps>.
+- Versioning: every batch is a release. Bump `VERSION`, add a line to `CHANGELOG.md` and tag `vX.Y.Z`.
+- Low-priority work: `Translate …` items under "Low priority". When it is the only work left, "do it" translates the first one: <the project's steps>.
 - Finished items: tick them (`- [x]`) and leave them in place.
-- Never push.
+- Done commit: mark items done in a commit of their own.
 ```
 
 Leave out any line where the default in `SKILL.md` already fits.

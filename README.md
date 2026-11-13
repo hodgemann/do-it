@@ -5,9 +5,9 @@ A skill for Claude Code (and a routine for any coding agent) that works through 
 You keep a `TODO.md`. You mark the next piece of work with `(do it)`. Then you type **do it**, and the agent:
 
 1. builds exactly that item and nothing else,
-2. runs only the tests that cover the change,
-3. commits at logical points (raising the version and tagging, if the project is versioned),
-4. marks the item done in its own commit, the way your to-do file already does it (ticked, moved to a Done section, or removed),
+2. runs the tests that cover the change,
+3. commits at logical points,
+4. marks the item done the way your to-do file already does it (ticked, moved to a Done section, or removed),
 5. tells you what it did and what the next "do it" will be.
 
 When nothing is queued, it reads the whole to-do list and suggests the best next candidate, putting your reported bugs first, and waits for you to say yes. It never starts unqueued work on its own, never pushes, and keeps each step small enough to review.
@@ -41,7 +41,7 @@ Copy the settings section from `templates/AGENTS-snippet.md` into your project's
 ## Set up a project
 
 1. Start a `TODO.md`; `templates/TODO.md` shows a layout that works well.
-2. Optionally, add a `do it settings` section to `AGENTS.md` or `CLAUDE.md` (see `templates/AGENTS-snippet.md`) to name your test commands, versioning and any low-priority kind of work. Without it, the defaults in `SKILL.md` apply.
+2. Optionally, add a `do it settings` section to `AGENTS.md` or `CLAUDE.md` (see `templates/AGENTS-snippet.md`) to name your test commands, make every batch a release (version bump, changelog line, tag), set a low-priority kind of work, and so on. Without it, the defaults in `SKILL.md` apply.
 3. Queue the first item and say "do it".
 
 ## Files

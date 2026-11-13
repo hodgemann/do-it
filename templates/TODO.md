@@ -4,7 +4,7 @@ Tasks use Markdown checkboxes. Section headings give their status; backlog subhe
 
 ## Do it
 
-- [ ] (do it) Short title (queued 2026-01-31): what to build, the files and functions involved, the constraints, and how to tell it is done. Large items list their batches:
+- [ ] (do it) Short title: what to build, the files and functions involved, the constraints, and how to tell it is done. Large items list their batches:
   - [ ] Batch 1: …
   - [ ] Batch 2: …
 
@@ -12,7 +12,7 @@ Tasks use Markdown checkboxes. Section headings give their status; backlog subhe
 
 Optional. Name the kind of work here (for example `Translate …` items) and in the project's `do it` settings. It ranks below every other suitable task.
 
-- [ ] Translate the export dialog (1.4.0). Keys: `Export`, `Include downloads`.
+- [ ] Translate the new labels in the export dialog: `Export`, `Include downloads`.
 
 ## Decisions needed
 
@@ -30,6 +30,6 @@ Work to scope and queue; these items are not marked `(do it)`.
 
 ## Notes
 
-Defects and notes the user left on specific screens or lines, with file and line references. These get priority when suggesting the next "do it".
+Defects and notes the user left on specific places (a line of code, a screen), with file and line references. These get priority when suggesting the next "do it".
 
 - [ ] Note: …
