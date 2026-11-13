@@ -34,7 +34,7 @@ git clone https://github.com/hodgemann/do-it.git ~/.claude/skills/do-it
 
 or for one project only, clone it into that project's `.claude/skills/do-it`.
 
-Then type `do it` in a session. Ask "queue the export bug as the next do it" to queue work.
+Then type `do it` in a session. To queue work, say "add the export bug to do it": the agent ranks it in the queue (bugs and quick fixes near the front, minor work toward the end) and tells you where it landed. Say "as the next do it" to put it first.
 
 ### Codex and other agents
 

@@ -1,6 +1,6 @@
 ---
 name: do-it
-description: Work through a project's to-do list one queued batch at a time. Use when the user opens a fresh session with just "do it" (do the next queued item), when they ask to queue an item as the next "do it", or when they ask what the next "do it" should be.
+description: Work through a project's to-do list one queued batch at a time. Use when the user opens a fresh session with just "do it" (do the next queued item), when they ask to add an item to the "do it" queue (anywhere in it, or as the next "do it"), or when they ask what the next "do it" should be.
 ---
 
 # do it
@@ -69,13 +69,19 @@ The user can always choose any item explicitly, including a low-priority one ahe
 
 ## Queueing
 
-When the user asks to queue something ("queue X as the next do it", "make that the next do it", "queue X after the export fix"):
+When the user asks to queue something ("add X to do it", "queue X as the next do it", "queue X after the export fix"):
 
-1. Write it as one unchecked item in the to-do file's queue section (create a `## Do it` section at the top of the file if there is none), marked `(do it)`. The user controls the queue, so put the item where their words say: "next" or "first" puts it at the top, ahead of everything already queued; "after Y", "before Y", "last" or "at the end" put it there. With no ordering word, it goes at the top and is done next. The user can reorder the queue at any time, by hand or by asking.
+1. Write it as one unchecked item in the to-do file's queue section (create a `## Do it` section at the top of the file if there is none), marked `(do it)`. The user controls the queue, so put the item where their words say: "next" or "first" puts it at the top, ahead of everything already queued; "after Y", "before Y", "last" or "at the end" put it there. With no ordering word, rank it among the queued items by the same priorities as suggestions (see "When nothing is queued"):
+   - a reported bug, or a small quick change such as new wording for a button, goes near the front;
+   - other work goes after the queued items that outrank it;
+   - low-priority work (translations, for example) and other minor work goes toward the end.
+
+   The user can reorder the queue at any time, by hand or by asking.
 2. Make the item self-contained: what to build, the relevant files, functions and endpoints you already know, constraints the user stated, and how to tell it is done. A later session, or another agent, must be able to build it from the item alone.
 3. If the item is too large for one "do it", split it into numbered batches inside the item, each one a sensible commit.
 4. Remove the item from wherever it sat before (backlog, notes) so it is not listed twice.
-5. Commit the to-do change on its own ("Queue … as the next do it").
+5. Commit the to-do change on its own ("Queue … for do it").
+6. Tell the user where it landed: its place in the queue (for example "third of five") and the items just before and after it, so they can move it if they disagree.
 
 ## To-do file shape
 
