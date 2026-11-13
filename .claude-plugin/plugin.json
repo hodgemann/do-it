@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "do-it",
+  "version": "0.1.0",
+  "description": "Work through a project's to-do list one queued batch at a time: say \"do it\" to build, test, commit and tick off the next queued item.",
+  "author": {
+    "name": "<github user>"
+  },
+  "license": "Unlicense",
+  "keywords": ["todo", "workflow", "skill"],
+  "skills": [
+    "./"
+  ]
+}

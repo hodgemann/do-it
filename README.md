@@ -16,13 +16,21 @@ When nothing is queued, it reads the whole to-do list and suggests the best next
 
 ### Claude Code
 
-Personal (all projects):
+As a plugin (recommended; `/plugin update` keeps it current):
+
+```
+/plugin install do-it --marketplace <owner>/<repo>
+```
+
+On Claude Code versions older than 2.1.275, add the marketplace first: `/plugin marketplace add <owner>/<repo>`, then `/plugin install do-it@do-it`.
+
+Or as a plain skill, for all projects:
 
 ```sh
 git clone <this repo> ~/.claude/skills/do-it
 ```
 
-Or for one project only, clone it into that project's `.claude/skills/do-it`.
+or for one project only, clone it into that project's `.claude/skills/do-it`.
 
 Then type `do it` in a session. Ask "queue the export bug as the next do it" to queue work.
 
@@ -41,6 +49,7 @@ Copy the settings section from `templates/AGENTS-snippet.md` into your project's
 - `SKILL.md`: the skill itself.
 - `templates/TODO.md`: a sample to-do file.
 - `templates/AGENTS-snippet.md`: project settings to paste into `AGENTS.md` or `CLAUDE.md`.
+- `.claude-plugin/`: the plugin manifest and a one-plugin marketplace, so Claude Code can install the repository with `/plugin`.
 
 ## License
 
